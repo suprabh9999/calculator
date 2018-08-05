@@ -1,0 +1,3 @@
+.trialSelectBox div:not(:first-child) > div > div > div {
+    min-height: 30px;
+  }
