@@ -9,12 +9,13 @@ class Calculator extends React.Component{
     constructor(){
         super();
         this.state = {
-            computedValue : 100,
+            computedValue : 0,
             firstOperand:[],
             secondOperator:[],
             isSecondOpertor : false,
             operator:''
         }
+        this.listOfOperations=[];
     }
 
     displayInput=()=>{
@@ -22,12 +23,45 @@ class Calculator extends React.Component{
     }
 
     clearHandler=()=>{
-        this.setState({firstOperand : [], secondOperator:[], operator:''});
+        this.setState({firstOperand : [], secondOperator:[], operator:'',isSecondOpertor:false,computedValue:0});
     }
 
     computeValue=()=>{
-        console.log('inside');
-        this.setState({computedValue : 500});
+        let operator = this.state.operator;
+        let operandOne = Number(this.state.firstOperand.join(''));
+        let operandTwo = Number(this.state.secondOperator.join(''));
+        let result =null;
+        switch (operator){
+            case '+' : 
+                result = operandOne + operandTwo;
+            break;
+
+            case '-' : 
+                result = operandOne - operandTwo;
+            break;
+
+            case '/' : 
+                result = operandOne / operandTwo;
+            break;
+
+            case 'X' : 
+                result = operandOne * operandTwo;
+            break;
+            default : 
+                //Do nothing
+            
+        }
+        this.setState({computedValue : result},this.pushToLocalStorage);
+    }
+
+    pushToLocalStorage=()=>{
+        let value = this.state.firstOperand.join('')+' '+ this.state.operator + ' ' + 
+            this.state.secondOperator.join('')+ ' = ' + this.state.computedValue;
+
+        this.listOfOperations = this.listOfOperations.concat(value);
+
+        localStorage.setItem('operations',this.listOfOperations);
+        console.log(localStorage.getItem('operations'));
     }
 
     onInputHandler=(value)=>{
@@ -57,7 +91,8 @@ class Calculator extends React.Component{
         let tableRowData = [ ['7','8','9','/'], ['4','5','6','X'], 
             ['1','2','3','-'], ['.','0','=','+'] ];
 
-        let tableData = tableRowData.map((rowData,index) => <TableRow key={index} rowArray={rowData} onInputHandler= {this.onInputHandler} />);
+        let tableData = tableRowData.map((rowData,index) => <TableRow key={index} rowArray={rowData} 
+            onInputHandler= {this.onInputHandler} />);
         return(
             <div className={classes.mainContainer}>
                 <ComputedValue computedValue={this.state.computedValue} />
