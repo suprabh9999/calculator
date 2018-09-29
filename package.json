@@ -2,6 +2,7 @@
   "name": "sasspro",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://suprabh9999.github.io/gh-pages",
   "dependencies": {
     "ajax": "0.0.4",
     "autoprefixer": "7.1.6",
@@ -26,6 +27,7 @@
     "extract-text-webpack-plugin": "3.0.2",
     "file-loader": "1.1.5",
     "fs-extra": "3.0.1",
+    "gh-pages": "^2.0.0",
     "html-webpack-plugin": "2.29.0",
     "jest": "20.0.4",
     "node-sass": "^4.9.2",
@@ -51,6 +53,8 @@
     "whatwg-fetch": "2.0.3"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
     "test": "node scripts/test.js --env=jsdom"
