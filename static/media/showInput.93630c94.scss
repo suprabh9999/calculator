@@ -1,0 +1,25 @@
+.showInput{
+    background-color: white;
+    padding: 20px;
+    width : 369px;
+    // text-align: right;
+    font-size: 36px;
+    position: relative;
+}
+
+.customButton{   
+    background-color: #50d14e;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    display: inline-block;
+    font-size: 26px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+.input{
+    position: absolute;
+    top:30px;
+    right: 20px;
+}

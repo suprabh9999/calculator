@@ -1,0 +1,13 @@
+{
+  "main.css": "static/css/main.e1c6d1ef.css",
+  "main.css.map": "static/css/main.e1c6d1ef.css.map",
+  "main.js": "static/js/main.1cbeca81.js",
+  "main.js.map": "static/js/main.1cbeca81.js.map",
+  "static\\media\\App.scss": "static/media/App.4b4ab04b.scss",
+  "static\\media\\calculator.scss": "static/media/calculator.c654f4d9.scss",
+  "static\\media\\computedValue.scss": "static/media/computedValue.979b469b.scss",
+  "static\\media\\index.scss": "static/media/index.7e7ee06b.scss",
+  "static\\media\\showInput.scss": "static/media/showInput.93630c94.scss",
+  "static\\media\\tableRow.scss": "static/media/tableRow.d3626844.scss",
+  "static\\media\\textbox.scss": "static/media/textbox.b3735c46.scss"
+}
